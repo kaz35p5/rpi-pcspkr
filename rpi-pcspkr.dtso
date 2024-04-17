@@ -1,0 +1,22 @@
+// SPDX-License-Identifier: GPL-2.0
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "brcm,bcm2835";
+
+	fragment@2 {
+		target-path = "/";
+		__overlay__ {
+			pwm_beeper: pcspkr {
+				compatible = "pwm-beeper";
+				pwms = <&pwm 0 1000 0>;
+			};
+		};
+	};
+
+	__overrides__ {
+		pwm1 = <&pwm_beeper>,"pwms:1=",<1>;
+	};
+};
+

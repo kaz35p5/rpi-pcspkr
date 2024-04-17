@@ -1,0 +1,3 @@
+
+DRIVERS=="pwm-beeper", ENV{.INPUT_CLASS}="spkr"
+ENV{ID_PATH}=="?*", KERNEL=="event*", ENV{.INPUT_CLASS}=="?*", SYMLINK+="input/by-path/$env{ID_PATH}-event-$env{.INPUT_CLASS}"

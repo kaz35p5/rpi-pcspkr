@@ -1,0 +1,4 @@
+カーネルソースから drivers/input/misc/pwm-beeper.c をここにコピーし、
+
+make
+sudo make install
